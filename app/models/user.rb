@@ -10,13 +10,4 @@ class User < ApplicationRecord
 
   validates :image, attached: true, content_type: ['image/png', 'image/jpeg']
   validates :username, presence: true, uniqueness: true
-  validates :is_public, presence: true
-
-  before_validation :set_status
-
-  private
-
-  def set_status
-    self.is_public = true
-  end
 end

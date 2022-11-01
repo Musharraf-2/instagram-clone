@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2022_10_31_110753) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.boolean "is_public", default: true
+    t.boolean "is_private", default: false
     t.string "username", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
