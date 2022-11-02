@@ -1,0 +1,10 @@
+<%= form_with model: @post, local: true do |form| %>
+  <%= form.label :description %>
+  <%= form.text_field :description, class: "form-control" %>
+  <br />
+  <%= form.label :images %>
+  <%= form.file_field :images, multiple: true, accept: "image/png, image/jpeg", class: "form-control" %>
+  <br />
+  <%= form.submit nil, class: "btn btn-primary mb-4" %>
+<% end %>
+<%= render "shared/errors", object: @post %>

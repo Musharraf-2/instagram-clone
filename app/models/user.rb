@@ -7,6 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :registerable
 
   has_one_attached :image
+  has_many :posts, dependent: :destroy
 
   validates :image, attached: true, content_type: ['image/png', 'image/jpeg']
   validates :username, presence: true, uniqueness: true
