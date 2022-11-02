@@ -1,0 +1,16 @@
+<div class="row justify-content-center">
+  <div class="col-7">
+    <div class="mb-2">
+      <%= image_tag @post.user.image, class: "post-user-image" %>
+      <span><%=  @post.user.username%></span>
+    </div>
+    <div class="row justify-content-center">
+        <% @post.images.each do |image| %>
+          <div class="col-4 post-image-col my-2">
+            <%= image_tag image, class: "post-image-show" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+.post-image {
+  width: 600px;
+  height: 450px;
+}
+
+.post-user-image {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+}
+
+.post-image-col {
+  height: 300px;
+}
+
+.post-image-show {
+  height: 100%;
+  width: 100%;
+}
