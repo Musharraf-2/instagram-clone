@@ -1,0 +1,14 @@
+<div id="comment-<%= comment.id %>">
+  <div>
+    <%= image_tag comment.user.image, class: "post-user-image" %>
+    <span><%= comment.user.username %></span>
+  </div>
+  <p class="mx-2"><%= comment.body %><p>
+  <% if user_signed_in? && (comment.user_id == current_user.id || comment.post.user_id == current_user.id) %>
+    <%= link_to "Delete", post_comment_path(comment.post, comment), method: :delete, remote: true %>
+  <% end %>
+  <% if user_signed_in? && comment.user_id == current_user.id %>
+    <%= link_to "Edit", edit_post_comment_path(comment.post, comment) %>
+  <% end %>
+  <hr />
+</div>

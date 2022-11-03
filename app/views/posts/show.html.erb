@@ -1,4 +1,4 @@
-<div class="row justify-content-center">
+<div class="row justify-content-center m-0 mb-2">
   <div class="col-7">
     <div class="mb-2">
       <%= image_tag @post.user.image, class: "post-user-image" %>
@@ -10,7 +10,13 @@
             <%= image_tag image, class: "post-image-show" %>
           </div>
         <% end %>
-      </div>
+    </div>
+    <% if user_signed_in? %>
+      <%= render 'comments/form' %>
+    <% end %>
+    <div class="comment-errors text-danger text-center mb-3"></div>
+    <div class="comments-div p-3">
+      <%= render @comments %>
     </div>
   </div>
 </div>
