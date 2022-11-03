@@ -17,3 +17,8 @@
   height: 100%;
   width: 100%;
 }
+
+.comments-div {
+  border: 1px solid rgb(199, 199, 199);
+  border-radius: 10px;
+}

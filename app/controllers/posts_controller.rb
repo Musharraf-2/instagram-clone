@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: %i[edit update destroy show]
 
   def index
-    @posts = Post.all.order(created_at: :desc)
+    @posts = Post.order(created_at: :desc)
   end
 
   def new
@@ -44,7 +44,10 @@ class PostsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @comment = Comment.new
+    @comments = @post.comments.order(created_at: :desc)
+  end
 
   private
 
