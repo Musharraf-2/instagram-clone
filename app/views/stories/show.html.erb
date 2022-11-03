@@ -1,0 +1,18 @@
+<div class="row justify-content-center">
+  <div class="col-4">
+    <div>
+      <%= image_tag @story.user.image, class: "story-user-image" %>
+      <span><%= @story.user.username %></span><br>
+      <% if user_signed_in? && @story.user_id == current_user.id %>
+        <%= link_to "Delete", story_path(@story), method: :delete, class: "mx-3 text-danger" %>
+      <% end %>
+    </div>
+    <div class="row justify-content-center">
+      <% @story.images.each do |image|  %>
+        <div class="col-4 story-image-col my-2">
+          <%= image_tag image, class: "story-image" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
