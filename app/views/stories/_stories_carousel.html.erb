@@ -1,40 +1,40 @@
 <div id="carouselExampleControls" class="carousel slide my-4 " data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="row justify-content-center">
+        <% for i in 0..3 do %>
+          <% if @stories[i] %>
+              <div class="col-3">
+                <%= link_to story_path(@stories[i]) do %>
+                  <%= image_tag @stories[i].images[0], class: "carousel-image" %>
+                <% end %>
+              </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <% if @stories.length > 4 %>
+      <div class="carousel-item">
         <div class="row justify-content-center">
-          <% for i in 0..3 do %>
+          <% for i in 4..@stories.length-1 do %>
             <% if @stories[i] %>
-                <div class="col-3">
-                  <%= link_to story_path(@stories[i]) do %>
-                    <%= image_tag @stories[i].images[0], class: "carousel-image" %>
-                  <% end %>
-                </div>
+              <div class="col-3">
+                <%= link_to story_path(@stories[i]) do %>
+                  <%= image_tag @stories[i].images[0], class: "carousel-image" %>
+                <% end %>
+              </div>
             <% end %>
           <% end %>
         </div>
       </div>
-      <% if @stories.length > 4 %>
-        <div class="carousel-item">
-          <div class="row justify-content-center">
-            <% for i in 4..@stories.length-1 do %>
-              <% if @stories[i] %>
-                <div class="col-3">
-                  <%= link_to story_path(@stories[i]) do %>
-                    <%= image_tag @stories[i].images[0], class: "carousel-image" %>
-                  <% end %>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    <% end %>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

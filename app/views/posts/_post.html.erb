@@ -4,7 +4,7 @@
       <%= image_tag post.user.image, class: "post-user-image" %>
       <span><%= post.user.username %></span>
     </div>
-    <%= link_to post_path(post) do%>
+    <%= link_to post_path(post) do %>
       <h6><%= post.description %></h6>
       <%= image_tag post.images[0], class: "post-image mb-3" %>
     <% end %>

@@ -5,11 +5,7 @@
       <span><%=  @post.user.username%></span>
     </div>
     <div class="row justify-content-center">
-        <% @post.images.each do |image| %>
-          <div class="col-4 post-image-col my-2">
-            <%= image_tag image, class: "post-image-show" %>
-          </div>
-        <% end %>
+        <%= render partial: 'shared/image', collection: @post.images %>
     </div>
     <% if user_signed_in? %>
       <%= render 'comments/form' %>

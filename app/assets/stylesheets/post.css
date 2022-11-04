@@ -10,11 +10,11 @@
   border-radius: 50%;
 }
 
-.post-image-col {
+.image-col {
   height: 300px;
 }
 
-.post-image-show {
+.image-show {
   height: 100%;
   width: 100%;
   border-radius: 25px;
