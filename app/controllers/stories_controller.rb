@@ -11,6 +11,7 @@ class StoriesController < ApplicationController
   def create
     @story = current_user.stories.new(story_params)
     if @story.save
+      StoriesCleanupJob.set(wait: 24.hours).perform_later(@story)
       flash[:notice] = 'Story was created successfully.'
       redirect_to posts_path
     else

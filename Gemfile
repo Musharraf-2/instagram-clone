@@ -67,4 +67,6 @@ end
 gem 'active_storage_validations'
 gem 'devise'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'redis'
+gem 'sidekiq', '5.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
