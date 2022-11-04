@@ -1,0 +1,12 @@
+<div class="row justify-content-center">
+  <div class="col-4">
+    <h2 class="text-center">Create Story</h2>
+    <%= form_with model: @story, local: true do |form| %>
+      <%= form.label :images %>
+      <%= form.file_field :images, multiple: true, accept: "image/png, image/jpeg", class: "form-control" %>
+      <br />
+      <%= form.submit nil, class: "btn btn-primary mb-4" %>
+    <% end %>
+    <%= render "shared/errors", object: @story %>
+  </div>
+</div>

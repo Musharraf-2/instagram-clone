@@ -1,0 +1,15 @@
+.carousel-item {
+  height: 200px;
+}
+
+.carousel-image {
+  height: 200px;
+  width: 100%;
+  border-radius: 25px;
+}
+
+.story-user-image {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+}

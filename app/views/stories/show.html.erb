@@ -1,0 +1,14 @@
+<div class="row justify-content-center m-0">
+  <div class="col-4">
+    <div>
+      <%= image_tag @story.user.image, class: "story-user-image" %>
+      <span><%= @story.user.username %></span><br>
+      <% if user_signed_in? && @story.user_id == current_user.id %>
+        <%= link_to "Delete", story_path(@story), method: :delete, class: "mx-3 text-danger" %>
+      <% end %>
+    </div>
+    <div class="row justify-content-center">
+      <%= render partial: 'shared/image', collection: @story.images %>
+    </div>
+  </div>
+</div>

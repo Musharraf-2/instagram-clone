@@ -1,14 +1,16 @@
-<div id="post-<%= post.id %>" class="mb-3">
-  <div class="mb-3">
-    <%= image_tag post.user.image, class: "post-user-image" %>
-    <span><%= post.user.username %></span>
+<div id="post-<%= post.id %>" class="mb-3 shadow-lg rounded">
+  <div class="p-3">
+    <div class="mb-3">
+      <%= image_tag post.user.image, class: "post-user-image" %>
+      <span><%= post.user.username %></span>
+    </div>
+    <%= link_to post_path(post) do %>
+      <h6><%= post.description %></h6>
+      <%= image_tag post.images[0], class: "post-image mb-3" %>
+    <% end %>
+    <% if user_signed_in? && current_user.id == post.user_id %>
+      <%= link_to 'Edit', edit_post_path(post), class: "mx-2 text-warning" %>
+      <%= link_to 'Delete', post_path(post), method: :delete, remote: true, class: "mx-2 text-danger  "  %>
+    <% end %>
   </div>
-  <%= link_to post_path(post) do%>
-    <h6><%= post.description %></h6>
-    <%= image_tag post.images[0], class: "post-image mb-3" %>
-  <% end %>
-  <% if user_signed_in? && current_user.id == post.user_id %>
-    <%= link_to 'Edit', edit_post_path(post), class: "mx-2" %>
-    <%= link_to 'Delete', post_path(post), method: :delete, remote: true, class: "mx-2" %>
-  <% end %>
 </div>
